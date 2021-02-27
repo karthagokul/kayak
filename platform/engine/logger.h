@@ -6,17 +6,14 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
+#ifndef LOGGER_H
+#define LOGGER_H
 
-#ifndef ENGINE_H
-#define ENGINE_H
 
-namespace Kayak {
-    class Engine
-    {
-    public:
-        Engine();
-        ~Engine();
-    };
-}
+class Logger
+{
+public:
+    Logger();
+};
 
-#endif // ENGINE_H
+#endif // LOGGER_H
