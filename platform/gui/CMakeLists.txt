@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(gui LANGUAGES CXX)
+project(kayak-gui LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
