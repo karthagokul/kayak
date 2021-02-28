@@ -6,20 +6,14 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
+#include "usbcontroller.h"
 
-#include "engine.h"
-
-Engine::Engine()
+USBController::USBController()
 {
 
 }
 
-Engine::~Engine()
-{
-
-}
-
-void Engine::setLogLevel(const LogLevel &loglevel)
+void USBController::initDevice(const std::string &identifier)
 {
 
 }

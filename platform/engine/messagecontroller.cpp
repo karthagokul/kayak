@@ -6,20 +6,9 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
+#include "messagecontroller.h"
 
-#include "engine.h"
-
-Engine::Engine()
-{
-
-}
-
-Engine::~Engine()
-{
-
-}
-
-void Engine::setLogLevel(const LogLevel &loglevel)
+MessageController::MessageController()
 {
 
 }

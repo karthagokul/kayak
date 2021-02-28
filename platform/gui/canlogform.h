@@ -6,20 +6,25 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
+#ifndef CANLOGFORM_H
+#define CANLOGFORM_H
 
-#include "engine.h"
+#include <QWidget>
 
-Engine::Engine()
-{
-
+namespace Ui {
+class CANLogForm;
 }
 
-Engine::~Engine()
+class CANLogForm : public QWidget
 {
+    Q_OBJECT
 
-}
+public:
+    explicit CANLogForm(QWidget *parent = nullptr);
+    ~CANLogForm();
 
-void Engine::setLogLevel(const LogLevel &loglevel)
-{
+private:
+    Ui::CANLogForm *ui;
+};
 
-}
+#endif // CANLOGFORM_H

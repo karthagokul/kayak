@@ -10,13 +10,21 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 
-namespace Kayak {
-    class Engine
-    {
-    public:
-        Engine();
-        ~Engine();
+
+class Engine
+{
+    enum LogLevel {
+        Info,
+        Debug,
+        Warning,
+        Error
     };
-}
+
+public:
+    Engine();
+    void setLogLevel(const LogLevel &loglevel);
+    ~Engine();
+};
+
 
 #endif // ENGINE_H

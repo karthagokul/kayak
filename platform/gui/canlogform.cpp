@@ -6,20 +6,17 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
+#include "canlogform.h"
+#include "ui_canlogform.h"
 
-#include "engine.h"
-
-Engine::Engine()
+CANLogForm::CANLogForm(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::CANLogForm)
 {
-
+    ui->setupUi(this);
 }
 
-Engine::~Engine()
+CANLogForm::~CANLogForm()
 {
-
-}
-
-void Engine::setLogLevel(const LogLevel &loglevel)
-{
-
+    delete ui;
 }

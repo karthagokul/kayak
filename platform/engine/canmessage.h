@@ -6,20 +6,14 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
+#ifndef CANMESSAGE_H
+#define CANMESSAGE_H
 
-#include "engine.h"
 
-Engine::Engine()
+class CANMessage
 {
+public:
+    CANMessage();
+};
 
-}
-
-Engine::~Engine()
-{
-
-}
-
-void Engine::setLogLevel(const LogLevel &loglevel)
-{
-
-}
+#endif // CANMESSAGE_H

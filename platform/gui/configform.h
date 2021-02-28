@@ -6,20 +6,25 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
+#ifndef CONFIGFORM_H
+#define CONFIGFORM_H
 
-#include "engine.h"
+#include <QWidget>
 
-Engine::Engine()
-{
-
+namespace Ui {
+class ConfigForm;
 }
 
-Engine::~Engine()
+class ConfigForm : public QWidget
 {
+    Q_OBJECT
 
-}
+public:
+    explicit ConfigForm(QWidget *parent = nullptr);
+    ~ConfigForm();
 
-void Engine::setLogLevel(const LogLevel &loglevel)
-{
+private:
+    Ui::ConfigForm *ui;
+};
 
-}
+#endif // CONFIGFORM_H

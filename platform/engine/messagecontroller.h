@@ -6,20 +6,14 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
+#ifndef MESSAGECONTROLLER_H
+#define MESSAGECONTROLLER_H
 
-#include "engine.h"
 
-Engine::Engine()
+class MessageController
 {
+public:
+    MessageController();
+};
 
-}
-
-Engine::~Engine()
-{
-
-}
-
-void Engine::setLogLevel(const LogLevel &loglevel)
-{
-
-}
+#endif // MESSAGECONTROLLER_H

@@ -6,20 +6,17 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
+#include "configform.h"
+#include "ui_configform.h"
 
-#include "engine.h"
-
-Engine::Engine()
+ConfigForm::ConfigForm(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::ConfigForm)
 {
-
+    ui->setupUi(this);
 }
 
-Engine::~Engine()
+ConfigForm::~ConfigForm()
 {
-
-}
-
-void Engine::setLogLevel(const LogLevel &loglevel)
-{
-
+    delete ui;
 }
