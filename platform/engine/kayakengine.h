@@ -6,14 +6,18 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
-#ifndef MESSAGECONTROLLER_H
-#define MESSAGECONTROLLER_H
+
+#ifndef ENGINE_H
+#define ENGINE_H
 
 
-class MessageController
+class KayakEngine
 {
+
 public:
-    MessageController();
+    KayakEngine();
+    ~KayakEngine();
 };
 
-#endif // MESSAGECONTROLLER_H
+
+#endif // ENGINE_H

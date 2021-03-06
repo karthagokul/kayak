@@ -9,3 +9,4 @@ file(GLOB kayak_SRC
 )
 
 add_library(kayak-engine ${kayak_SRC})
+target_include_directories (kayak-engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

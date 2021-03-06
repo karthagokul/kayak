@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMdiArea>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,8 +16,13 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+protected slots:
+    void showCanLogView();
+    void showCanSettings();
+private:
+    void addSubWindow(QWidget *widget);
 private:
     Ui::MainWindow *ui;
+    QMdiArea *mdiArea;
 };
 #endif // MAINWINDOW_H

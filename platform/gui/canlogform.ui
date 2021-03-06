@@ -11,13 +11,13 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>CAN Log view</string>
   </property>
   <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>90</y>
+     <y>20</y>
      <width>691</width>
      <height>331</height>
     </rect>

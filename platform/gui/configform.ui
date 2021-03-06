@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>CAN Settings</string>
   </property>
   <widget class="QTabWidget" name="configTabWidget">
    <property name="geometry">
@@ -41,7 +41,7 @@
      <property name="title">
       <string>USB Connections</string>
      </property>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -93,7 +93,7 @@
      <property name="title">
       <string>USB Controller 1</string>
      </property>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -145,7 +145,7 @@
      <property name="title">
       <string>USB Controller 2</string>
      </property>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>10</x>

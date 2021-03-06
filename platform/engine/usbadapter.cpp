@@ -6,20 +6,9 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
+#include "usbadapter.h"
 
-#include "engine.h"
-
-Engine::Engine()
-{
-
-}
-
-Engine::~Engine()
-{
-
-}
-
-void Engine::setLogLevel(const LogLevel &loglevel)
+USBAdapter::USBAdapter()
 {
 
 }
