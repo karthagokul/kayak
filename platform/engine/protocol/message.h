@@ -9,6 +9,8 @@
 #ifndef MESSAGE_H
 #define MESSAGE_H
 
+#include <QObject>
+#include <QByteArray>
 
 class Message
 {
@@ -21,6 +23,10 @@ class Message
         PlatformToHW,
         HWToPlatform
     };
+
+private:
+    QByteArray header;
+    QByteArray data;
 
 public:
     Message();
