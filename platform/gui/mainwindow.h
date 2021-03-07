@@ -19,6 +19,7 @@ public:
 protected slots:
     void showCanLogView();
     void showCanSettings();
+    void showCanFrameGenerator();
 private:
     void addSubWindow(QWidget *widget);
 private:

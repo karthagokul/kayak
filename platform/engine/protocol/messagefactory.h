@@ -10,11 +10,12 @@
 #define MESSAGEFACTORY_H
 
 #include "message.h"
+
 class MessageFactory
 {
 public:
     MessageFactory();
-    //QSharedPointer<Message> createMessage(const QByteArray &inputdata);
+    QSharedPointer<Message> createMessage(const QByteArray &inputdata);
 };
 
 #endif // MESSAGEFACTORY_H

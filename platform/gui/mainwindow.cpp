@@ -5,6 +5,7 @@
 
 #include "canlogform.h"
 #include "configform.h"
+#include "canframegeneratorwidget.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -15,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(mdiArea);
     connect(ui->actionCan_Log,SIGNAL(triggered()),this,SLOT(showCanLogView()));
     connect(ui->actionCAN_Settings,SIGNAL(triggered()),this,SLOT(showCanSettings()));
+    connect(ui->actionCAN_Generator,SIGNAL(triggered()),this,SLOT(showCanFrameGenerator()));
 
 }
 
@@ -36,6 +38,14 @@ void MainWindow::showCanSettings()
     addSubWindow(form);
 
 }
+
+void MainWindow::showCanFrameGenerator()
+{
+    qDebug()<<"Showing CAN FrameGenerator";
+    CANFrameGeneratorWidget *form= new CANFrameGeneratorWidget(mdiArea);
+    addSubWindow(form);
+}
+
 void MainWindow::showCanLogView()
 {
     qDebug()<<"Showing CAN log view";

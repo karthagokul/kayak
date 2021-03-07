@@ -7,8 +7,14 @@
  *******************************************************************
 */
 #include "message.h"
+#include <QDebug>
 
 Message::Message()
 {
 
+}
+
+Message::~Message()
+{
+    qDebug()<<"destructing message";
 }

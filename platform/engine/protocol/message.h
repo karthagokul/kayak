@@ -11,6 +11,7 @@
 
 #include <QObject>
 #include <QByteArray>
+#include <QSharedPointer>
 
 class Message
 {
@@ -24,12 +25,17 @@ class Message
         HWToPlatform
     };
 
-private:
+protected:
     QByteArray header;
     QByteArray data;
 
 public:
     Message();
+    ~Message();
+    QByteArray getHeader() const
+    {
+        return header;
+    }
 
 };
 

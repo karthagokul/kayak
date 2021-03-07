@@ -8,13 +8,14 @@
 */
 #include "messagefactory.h"
 #include "reqcmdmessage.h"
+
 MessageFactory::MessageFactory()
 {
 
 }
 
-//QSharedPointer<Message> MessageFactory::createMessage(const QByteArray &inputdata)
-//{
-//    auto x = QSharedPointer<REQCMDMessage>::create();
-//    return x;
-//}
+QSharedPointer<Message> MessageFactory::createMessage(const QByteArray &inputdata)
+{
+    QSharedPointer<Message> pB = QSharedPointer<Message>(new REQCMDMessage());
+    return pB;
+}

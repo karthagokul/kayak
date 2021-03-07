@@ -10,5 +10,6 @@
 
 REQCMDMessage::REQCMDMessage()
 {
-
+    data = "data";
+    header = "header";
 }
