@@ -6,15 +6,9 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
-#ifndef ACKCMDMESSAGE_H
-#define ACKCMDMESSAGE_H
+#include "caninbox.h"
 
-#include "message.h"
-
-class ACKCMDMessage:public Message
+CANInbox::CANInbox()
 {
-public:
-    ACKCMDMessage();
-};
 
-#endif // ACKCMDMESSAGE_H
+}

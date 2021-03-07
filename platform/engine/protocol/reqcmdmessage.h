@@ -9,11 +9,13 @@
 #ifndef REQCMDMESSAGE_H
 #define REQCMDMESSAGE_H
 
+#include "message.h"
 
-class REQCMDMessage
+class REQCMDMessage:public Message
 {
 public:
     REQCMDMessage();
 };
+
 
 #endif // REQCMDMESSAGE_H

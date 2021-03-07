@@ -6,28 +6,18 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
-#ifndef MESSAGEROUTER_H
-#define MESSAGEROUTER_H
+#ifndef CANOUTBOX_H
+#define CANOUTBOX_H
 
 #include <QThread>
-#include <QQueue>
-#include <QByteArray>
 
-class Message;
 
-class Protocol
+class CANOutbox : public QThread
 {
 public:
-    Message* construct(const QByteArray &raw);
-};
+    CANOutbox();
 
-class Router:public QThread
-{
 private:
-    QQueue<QByteArray> readQueue;
-    QQueue<QByteArray> writeQueue;
-public:
-    Router();
 };
 
-#endif // MESSAGEROUTER_H
+#endif // CANOUTBOX_H

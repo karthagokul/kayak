@@ -6,15 +6,18 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
-#ifndef ACKCMDMESSAGE_H
-#define ACKCMDMESSAGE_H
+#ifndef CANINBOX_H
+#define CANINBOX_H
 
-#include "message.h"
+#include <QThread>
+#include "protocol/message.h"
 
-class ACKCMDMessage:public Message
+class CANInbox : public QThread
 {
 public:
-    ACKCMDMessage();
+    CANInbox();
+
+private:
 };
 
-#endif // ACKCMDMESSAGE_H
+#endif // CANINBOX_H

@@ -6,15 +6,15 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
-#ifndef ACKCMDMESSAGE_H
-#define ACKCMDMESSAGE_H
+#ifndef MESSAGEFACTORY_H
+#define MESSAGEFACTORY_H
 
 #include "message.h"
-
-class ACKCMDMessage:public Message
+class MessageFactory
 {
 public:
-    ACKCMDMessage();
+    MessageFactory();
+    //QSharedPointer<Message> createMessage(const QByteArray &inputdata);
 };
 
-#endif // ACKCMDMESSAGE_H
+#endif // MESSAGEFACTORY_H

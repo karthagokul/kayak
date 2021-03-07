@@ -6,20 +6,17 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
-#include "router.h"
-#include "message.h"
+#include "canframegeneratorwidget.h"
+#include "ui_canframegeneratorwidget.h"
 
-Message* Protocol::construct(const QByteArray &raw)
+CANFrameGeneratorWidget::CANFrameGeneratorWidget(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::CANFrameGeneratorWidget)
 {
-    QChar cti=raw.at(0);
-    if((cti=='!')||(cti=='#')||(cti=='@')||(cti=='$'))
-    {
-
-    }
-    //something like this, we shall check the bytes and create a message
+    ui->setupUi(this);
 }
 
-Router::Router()
+CANFrameGeneratorWidget::~CANFrameGeneratorWidget()
 {
-
+    delete ui;
 }
