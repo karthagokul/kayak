@@ -6,8 +6,6 @@
 #include "canlogform.h"
 #include "configform.h"
 
-#include "kayakengine.h"
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -18,7 +16,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->actionCan_Log,SIGNAL(triggered()),this,SLOT(showCanLogView()));
     connect(ui->actionCAN_Settings,SIGNAL(triggered()),this,SLOT(showCanSettings()));
 
-    KayakEngine engine;
 }
 
 MainWindow::~MainWindow()

@@ -6,26 +6,21 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
-#ifndef CONFIGFORM_H
-#define CONFIGFORM_H
+#ifndef DISPATCHER_H
+#define DISPATCHER_H
 
-#include <QWidget>
+#include <QThread>
 
-namespace Ui {
-class ConfigForm;
-}
-
-class ConfigForm : public QWidget
+class Dispatcher :public QThread
 {
-    Q_OBJECT
-
 public:
-    explicit ConfigForm(QWidget *parent = nullptr);
-    ~ConfigForm();
+    Dispatcher();
+    void push(const QByteArray &data);
+
 protected:
-    void updateUI();
-private:
-    Ui::ConfigForm *ui;
+    void run();
+
+
 };
 
-#endif // CONFIGFORM_H
+#endif // DISPATCHER_H

@@ -6,26 +6,20 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
-#ifndef CONFIGFORM_H
-#define CONFIGFORM_H
+#include "router.h"
+#include "message.h"
 
-#include <QWidget>
+Message* Protocol::construct(const QByteArray &raw)
+{
+    QChar cti=raw.at(0);
+    if((cti=='!')||(cti=='#')||(cti=='@')||(cti=='$'))
+    {
 
-namespace Ui {
-class ConfigForm;
+    }
+    //something like this, we shall check the bytes and create a message
 }
 
-class ConfigForm : public QWidget
+Router::Router()
 {
-    Q_OBJECT
 
-public:
-    explicit ConfigForm(QWidget *parent = nullptr);
-    ~ConfigForm();
-protected:
-    void updateUI();
-private:
-    Ui::ConfigForm *ui;
-};
-
-#endif // CONFIGFORM_H
+}

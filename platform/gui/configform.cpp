@@ -8,12 +8,20 @@
 */
 #include "configform.h"
 #include "ui_configform.h"
+#include "engine.h"
 
 ConfigForm::ConfigForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ConfigForm)
 {
     ui->setupUi(this);
+    updateUI();
+}
+
+void ConfigForm::updateUI()
+{
+    ui->comport_combo->addItems(KayakEngine::instance()->getCOMDevices());
+    ui->baudrate_combo->addItems(KayakEngine::instance()->getCOMBaudRate());
 }
 
 ConfigForm::~ConfigForm()

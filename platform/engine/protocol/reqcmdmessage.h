@@ -6,9 +6,14 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
-#include "usbadapter.h"
+#ifndef REQCMDMESSAGE_H
+#define REQCMDMESSAGE_H
 
-USBAdapter::USBAdapter()
+
+class REQCMDMessage
 {
+public:
+    REQCMDMessage();
+};
 
-}
+#endif // REQCMDMESSAGE_H

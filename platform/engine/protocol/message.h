@@ -6,26 +6,25 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
-#ifndef CONFIGFORM_H
-#define CONFIGFORM_H
+#ifndef MESSAGE_H
+#define MESSAGE_H
 
-#include <QWidget>
 
-namespace Ui {
-class ConfigForm;
-}
-
-class ConfigForm : public QWidget
+class Message
 {
-    Q_OBJECT
+    enum  Type {
+        ReqCmd,
+        AckCmd
+    };
+
+    enum Direction {
+        PlatformToHW,
+        HWToPlatform
+    };
 
 public:
-    explicit ConfigForm(QWidget *parent = nullptr);
-    ~ConfigForm();
-protected:
-    void updateUI();
-private:
-    Ui::ConfigForm *ui;
+    Message();
+
 };
 
-#endif // CONFIGFORM_H
+#endif // MESSAGE_H

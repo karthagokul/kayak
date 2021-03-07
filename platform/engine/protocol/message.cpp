@@ -6,18 +6,9 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
+#include "message.h"
 
-#ifndef ENGINE_H
-#define ENGINE_H
-
-
-class KayakEngine
+Message::Message()
 {
 
-public:
-    KayakEngine();
-    ~KayakEngine();
-};
-
-
-#endif // ENGINE_H
+}

@@ -6,26 +6,28 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
-#ifndef CONFIGFORM_H
-#define CONFIGFORM_H
+#ifndef MESSAGEROUTER_H
+#define MESSAGEROUTER_H
 
-#include <QWidget>
+#include <QThread>
+#include <QQueue>
+#include <QByteArray>
 
-namespace Ui {
-class ConfigForm;
-}
+class Message;
 
-class ConfigForm : public QWidget
+class Protocol
 {
-    Q_OBJECT
-
 public:
-    explicit ConfigForm(QWidget *parent = nullptr);
-    ~ConfigForm();
-protected:
-    void updateUI();
-private:
-    Ui::ConfigForm *ui;
+    Message* construct(const QByteArray &raw);
 };
 
-#endif // CONFIGFORM_H
+class Router:public QThread
+{
+private:
+    QQueue<QByteArray> readQueue;
+    QQueue<QByteArray> writeQueue;
+public:
+    Router();
+};
+
+#endif // MESSAGEROUTER_H

@@ -6,14 +6,9 @@
  * permission of Bolgatty BV
  *******************************************************************
 */
-#ifndef CANMESSAGE_H
-#define CANMESSAGE_H
+#include "reqcmdmessage.h"
 
-
-class CANMessage
+REQCMDMessage::REQCMDMessage()
 {
-public:
-    CANMessage();
-};
 
-#endif // CANMESSAGE_H
+}
