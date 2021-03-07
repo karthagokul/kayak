@@ -19,8 +19,11 @@ void CANOutbox::run()
     while (!message_queue.isEmpty())
     {
         Message *m=message_queue.dequeue();
-        qDebug()<<m->rawdata ()<<" [Sending]";
+        qDebug()<<" [Sending] "<<m->rawdata ();
         //now send it to serial device
+
+        //Lets freeup memeory
+        m->deleteLater ();
     }
 }
 

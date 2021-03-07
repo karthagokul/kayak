@@ -11,13 +11,20 @@
 
 #include <QThread>
 #include "protocol/message.h"
+#include "protocol/messagefactory.h"
 #include <QQueue>
 
 class CANInbox : public QThread
 {
+    Q_OBJECT
 public:
     CANInbox();
 
+protected slots:
+    void onMessage(const QByteArray& message);
+
+private:
+    MessageFactory messagefactory;
 };
 
 #endif // CANINBOX_H

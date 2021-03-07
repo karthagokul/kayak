@@ -10,7 +10,6 @@
 #include "ui_configform.h"
 #include "engine.h"
 #include <QDebug>
-#include "protocol/reqcmdmessage.h"
 #include "canoutbox.h"
 
 
@@ -37,10 +36,13 @@ void ConfigForm::initCAN1ButtonClicked()
     BaudRate b=BaudRate125kbps;
     QByteArray data;
     QString canid="123";
-    Message *message=messageFactory->createReqCMD_initCAN(canid,b,data);
+
 
     CANOutbox *outbox=new CANOutbox();
-    outbox->post (message);
+    //testing purpose
+
+    outbox->post (messageFactory->createReqCMD_initCAN(canid,b,data));
+
 }
 void ConfigForm::initCAN2ButtonClicked()
 {

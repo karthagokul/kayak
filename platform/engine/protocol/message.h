@@ -15,30 +15,36 @@
 
 class Message :public QObject
 {
+public:
     enum  Type {
-        ReqCmd,
-        AckCmd
+        TxReqCmdConfig,
+        TxCanMessage,
+        RxCanMessage,
+        RxAckCmd
     };
 
-    enum Direction {
-        PlatformToHW,
-        HWToPlatform
+    enum Controller {
+        CAN1,
+        CAN2
     };
+
 
 protected:
-    QByteArray header;
     QByteArray data;
+    Type type;
+    Controller ctrller;
 
 public:
-    Message();
+    Message(const Type &type,const Controller &controller);
     ~Message();
-    QByteArray getHeader() const
+
+    void setRawData(const QByteArray &d)
     {
-        return header;
+        data=d;
     }
     QByteArray rawdata() const
     {
-        return header+data;
+        return data;
     }
 };
 

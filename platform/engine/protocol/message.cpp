@@ -9,9 +9,10 @@
 #include "message.h"
 #include <QDebug>
 
-Message::Message()
+Message::Message(const Type &t,const Controller & ctr)
 {
-
+    type=t;
+    ctrller= ctr;
 }
 
 Message::~Message()

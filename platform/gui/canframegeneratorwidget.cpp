@@ -9,7 +9,6 @@
 #include "canframegeneratorwidget.h"
 #include "ui_canframegeneratorwidget.h"
 #include "protocol/messagefactory.h"
-#include "protocol/reqcmdmessage.h"
 #include <QDebug>
 CANFrameGeneratorWidget::CANFrameGeneratorWidget(QWidget *parent) :
     QWidget(parent),
@@ -17,8 +16,6 @@ CANFrameGeneratorWidget::CANFrameGeneratorWidget(QWidget *parent) :
 {
     ui->setupUi(this);
     MessageFactory fc;
-    QSharedPointer<Message> message=fc.createMessage ("Welcome Back");
-    qDebug()<<message->getHeader();
 }
 
 CANFrameGeneratorWidget::~CANFrameGeneratorWidget()

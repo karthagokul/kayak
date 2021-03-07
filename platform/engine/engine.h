@@ -14,6 +14,9 @@
 
 class USBSerialReader;
 class USBSerialWriter;
+class CANInbox;
+class CANOutbox;
+
 
 class COMSerialDevice: public QObject {
     Q_OBJECT
@@ -37,11 +40,25 @@ private:
     KayakEngine();
     static KayakEngine *self;
     COMSerialDevice *activeDevice =0;
+    CANInbox *cinbox=0;
+    CANOutbox *coutbox=0;
+
+
 public:
     COMSerialDevice* getCOMDevice()
     {
         return activeDevice;
     }
+    CANInbox *inbox()
+    {
+        return cinbox;
+    }
+
+    CANOutbox *outbox()
+    {
+        return coutbox;
+    }
+
     static KayakEngine *instance();
     QStringList getCOMDevices();
     QStringList getCOMBaudRate();
