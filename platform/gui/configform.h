@@ -10,10 +10,14 @@
 #define CONFIGFORM_H
 
 #include <QWidget>
+#include "protocol/messagefactory.h"
+#include <QPointer>
 
 namespace Ui {
 class ConfigForm;
 }
+
+class MessageFactory;
 
 class ConfigForm : public QWidget
 {
@@ -24,8 +28,12 @@ public:
     ~ConfigForm();
 protected:
     void updateUI();
+protected slots:
+    void initCAN1ButtonClicked();
+    void initCAN2ButtonClicked();
 private:
     Ui::ConfigForm *ui;
+    MessageFactory* messageFactory;
 };
 
 #endif // CONFIGFORM_H

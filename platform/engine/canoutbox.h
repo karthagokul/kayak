@@ -10,14 +10,20 @@
 #define CANOUTBOX_H
 
 #include <QThread>
-
+#include <QMutex>
+#include <QQueue>
+#include "protocol/message.h"
 
 class CANOutbox : public QThread
 {
 public:
     CANOutbox();
+    void post(Message *message);
+    void run();
 
 private:
+    QQueue<Message*> message_queue;
+    QMutex resource;
 };
 
 #endif // CANOUTBOX_H

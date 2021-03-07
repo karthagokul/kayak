@@ -13,7 +13,7 @@
 #include <QByteArray>
 #include <QSharedPointer>
 
-class Message
+class Message :public QObject
 {
     enum  Type {
         ReqCmd,
@@ -36,7 +36,10 @@ public:
     {
         return header;
     }
-
+    QByteArray rawdata() const
+    {
+        return header+data;
+    }
 };
 
 #endif // MESSAGE_H

@@ -11,13 +11,13 @@
 
 #include <QThread>
 #include "protocol/message.h"
+#include <QQueue>
 
 class CANInbox : public QThread
 {
 public:
     CANInbox();
 
-private:
 };
 
 #endif // CANINBOX_H

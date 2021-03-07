@@ -7,7 +7,7 @@
  *******************************************************************
 */
 #include "messagefactory.h"
-#include "reqcmdmessage.h"
+
 
 MessageFactory::MessageFactory()
 {
@@ -17,5 +17,11 @@ MessageFactory::MessageFactory()
 QSharedPointer<Message> MessageFactory::createMessage(const QByteArray &inputdata)
 {
     QSharedPointer<Message> pB = QSharedPointer<Message>(new REQCMDMessage());
+    return pB;
+}
+
+Message* MessageFactory::createReqCMD_initCAN(const QString & canId,const BaudRate& baudRate,const QByteArray &data)
+{
+    Message *pB=new REQCMDMessage();
     return pB;
 }

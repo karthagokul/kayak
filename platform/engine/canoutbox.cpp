@@ -7,8 +7,30 @@
  *******************************************************************
 */
 #include "canoutbox.h"
+#include <QDebug>
 
 CANOutbox::CANOutbox()
 {
 
+}
+
+void CANOutbox::run()
+{
+    while (!message_queue.isEmpty())
+    {
+        Message *m=message_queue.dequeue();
+        qDebug()<<m->rawdata ()<<" [Sending]";
+        //now send it to serial device
+    }
+}
+
+
+void CANOutbox::post(Message *message)
+{
+    //lock the queue
+    resource.lock();
+    message_queue.enqueue(message);
+    resource.unlock();
+    //start processing
+    start();
 }

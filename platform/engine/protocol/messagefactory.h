@@ -10,12 +10,24 @@
 #define MESSAGEFACTORY_H
 
 #include "message.h"
+#include "reqcmdmessage.h"
+#include <QPointer>
+
+enum BaudRate {
+    BaudRate125kbps=1,
+    BaudRate250kbps,
+    BaudRate500kbps,
+    BaudRate1000kbps
+};
 
 class MessageFactory
 {
 public:
     MessageFactory();
     QSharedPointer<Message> createMessage(const QByteArray &inputdata);
+    Message* createReqCMD_initCAN(const QString & canId,const BaudRate& baudRate,const QByteArray &data);
 };
+
+
 
 #endif // MESSAGEFACTORY_H

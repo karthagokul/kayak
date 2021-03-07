@@ -9,11 +9,16 @@
 #include "configform.h"
 #include "ui_configform.h"
 #include "engine.h"
+#include <QDebug>
+#include "protocol/reqcmdmessage.h"
+#include "canoutbox.h"
+
 
 ConfigForm::ConfigForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ConfigForm)
 {
+    messageFactory=new MessageFactory();
     ui->setupUi(this);
     updateUI();
 }
@@ -22,6 +27,24 @@ void ConfigForm::updateUI()
 {
     ui->comport_combo->addItems(KayakEngine::instance()->getCOMDevices());
     ui->baudrate_combo->addItems(KayakEngine::instance()->getCOMBaudRate());
+    connect(ui->initCAN1Button, &QPushButton::clicked, this, &ConfigForm::initCAN1ButtonClicked);
+    connect(ui->initCAN2Button, &QPushButton::clicked, this, &ConfigForm::initCAN2ButtonClicked);
+}
+
+void ConfigForm::initCAN1ButtonClicked()
+{
+    qDebug()<<"initCAN1ButtonClicked";
+    BaudRate b=BaudRate125kbps;
+    QByteArray data;
+    QString canid="123";
+    Message *message=messageFactory->createReqCMD_initCAN(canid,b,data);
+
+    CANOutbox *outbox=new CANOutbox();
+    outbox->post (message);
+}
+void ConfigForm::initCAN2ButtonClicked()
+{
+    qDebug()<<"initCAN2ButtonClicked";
 }
 
 ConfigForm::~ConfigForm()
