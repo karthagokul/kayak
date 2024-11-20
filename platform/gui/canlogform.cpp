@@ -1,9 +1,9 @@
 /*
  *******************************************************************
- * Copyright (C) 2021-2022 Bolgatty BV
+ * Copyright (C) 2021-2022 Gokul Kartha
  * This file is part of Kayak.
  * Kayak can not be copied and/or distributed without the express
- * permission of Bolgatty BV
+ * permission of Gokul Kartha
  *******************************************************************
 */
 #include "canlogform.h"
